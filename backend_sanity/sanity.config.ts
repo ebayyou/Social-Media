@@ -8,7 +8,7 @@ const devOnlyPlugins = [getStartedPlugin()]
 
 export default defineConfig({
   name: 'default',
-  title: 'coral-marten',
+  title: 'sosial-media',
 
   projectId: '5yyijtr8',
   dataset: 'production',
