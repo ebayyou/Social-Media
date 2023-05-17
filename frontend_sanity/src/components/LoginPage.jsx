@@ -16,7 +16,7 @@ const LoginPage = () => {
     const doc = {
       _id: sub,
       _type: 'user',
-      username: name,
+      userName: name,
       image: picture,
     }
 

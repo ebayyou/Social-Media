@@ -20,14 +20,14 @@ const Sidebar = ({ user, closeToggle }) => {
         </Link>
 
         <div className="flex flex-col gap-5">
-          <NavLink to="/" className={({ isActive }) => (isActive ? isActiveStyle : isNotActiveStyle)} handleCloseSidebar={handleCloseSidebar}>
+          <NavLink to="/" className={({ isActive }) => (isActive ? isActiveStyle : isNotActiveStyle)} onClick={handleCloseSidebar}>
             <RiHomeFill />
             Home
           </NavLink>
 
           <h3 className="mt-2 px-5 text-base 2xl:text-xl">Discover cateogries</h3>
           {categories.slice(0, categories.length - 1).map((category) => (
-            <NavLink to={`/category/${category.name}`} className={({ isActive }) => (isActive ? isActiveStyle : isNotActiveStyle)} handleCloseSidebar={handleCloseSidebar} key={category.name}>
+            <NavLink to={`/category/${category.name}`} className={({ isActive }) => (isActive ? isActiveStyle : isNotActiveStyle)} onClick={handleCloseSidebar} key={category.name}>
               <img src={category.image} className="w-8 h-8 rounded-full shadow-sm" />
               {category.name}
             </NavLink>

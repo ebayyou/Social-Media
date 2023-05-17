@@ -2,8 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import { HiMenu } from 'react-icons/hi'
 import { AiFillCloseCircle } from 'react-icons/ai'
 import { Link, Route, Routes } from "react-router-dom";
-// import { client } from "../sanityClient";
-// import { userQuery } from "../utils/data";
+import { client } from "../sanityClient";
+import { userQuery } from "../utils/data";
+import { fetchUser } from "../utils/fetchUser";
 
 import { Sidebar, UserProfile } from "../components";
 import Pins from "./Pins";
@@ -13,13 +14,13 @@ const Home = () => {
   const [toggleSidebar, setToggleSidebar] = useState(false)
   const [user, setUser] = useState()
   const scrollRef = useRef(null)
-  const userInfo = localStorage.getItem('user') !== 'undefined' ? localStorage.getItem('user') : localStorage.clear()
+  const userInfo = fetchUser();
 
   useEffect(() => {
-    // const query = userQuery(userInfo?.sub)
+    const query = userQuery(userInfo?.sub)
 
-    // client.fetch(query)
-    //   .then((data) => setUser(data[0]))
+    client.fetch(query)
+      .then((data) => setUser(data[0]))
   }, [])
  
   useEffect(() => {
@@ -38,7 +39,7 @@ const Home = () => {
             <img src={logo} alt="Logo brand" className="w-28" />
           </Link>
           <Link to={`user-profile/${user?._id}`}>
-            <img src={user?.image} alt={user?.name} className="w-28" />
+            <img src={user?.image} alt={user?.name} className="w-9 h-9 rounded-full" />
           </Link>
         </div>
 

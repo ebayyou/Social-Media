@@ -3,8 +3,8 @@ import createImageUrlBuilder from "@sanity/image-url";
 
 export const config = {
   projectId: process.env.REACT_APP_SANITY_PROJECT_ID,
-  dataSet: 'production',
-  apiVersion: '2023-05-15',
+  dataset: 'production',
+  apiVersion: '2022-02-01',
   useCdn: process.env.NODE_ENV === 'production',
   token: process.env.REACT_APP_SANITY_PROJECT_TOKEN,
 }
