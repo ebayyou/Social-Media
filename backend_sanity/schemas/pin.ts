@@ -53,7 +53,7 @@ export default defineType({
       name: 'comments',
       title: 'Comments',
       type: 'array',
-      of: [{ type: 'comments' }]
+      of: [{ type: 'comment' }]
     }), 
   ]  
 })
